@@ -26,8 +26,9 @@
 		console.log(data);
         nameSelect.addEventListener("change", () => {
           const name = nameSelect.value;
-		if(name!="--選択してください--")
-          resultDiv.textContent = name ? `${name}さんの順路：${data[name]}` : "";
+		if(name!="--選択してください--"){
+			resultDiv.textContent = name ? `${name}さんの順路：${data[name]}` : "";
+		}
         });
       });
   </script>
