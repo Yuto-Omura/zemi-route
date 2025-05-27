@@ -55,9 +55,9 @@
 
       nameSelect.addEventListener("change", () => {
         const name = nameSelect.value.trim();
-        resultDiv.textContent = name && fixedData[name]
-          ? `${name}さんの順路：${fixedData[name]}`
-          : "";
+	      if(name!="--選択してください--"){
+		      resultDiv.textContent = name && fixedData[name]? `${name}さんの順路：${fixedData[name]}`: "";
+	      }
       });
     })
     .catch(error => {
