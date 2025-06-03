@@ -10,7 +10,7 @@
   <div id="result" style="margin-top: 1em;"></div>
 
   <script>
-    const url = "https://script.google.com/macros/s/AKfycbzAwT9vSLcFCDXuyFEUD1Ll_gE9nCc6NEZMEWiZf6OQirR96IVx2m4xKsOhCM_G6g_thg/exec"; // 例: https://script.google.com/macros/s/XXXX/exec
+    const url = "https://script.google.com/macros/s/AKfycbxCARV-M60vFo1nzTR6WV5gNVZ17lwa0UuJBeYrNBAsxjIxCBiH24eAB-Wnb9WXqJAo0A/exec"; // 例: https://script.google.com/macros/s/XXXX/exec
     const nameSelect = document.getElementById("name");
     const resultDiv = document.getElementById("result");
 
@@ -26,16 +26,14 @@
 		console.log(data);
         nameSelect.addEventListener("change", () => {
           const name = nameSelect.value;
-		if(name!="--選択してください--"){
-			resultDiv.textContent = name ? `${name}さんの順路：${data[name]}` : "";
-		}
+          resultDiv.textContent = name ? `${name}さんの順路：${data[name]}` : "";
         });
       });
   </script>
 </body>
 </html>
 <script>
-  const url = "https://script.google.com/macros/s/AKfycbzAwT9vSLcFCDXuyFEUD1Ll_gE9nCc6NEZMEWiZf6OQirR96IVx2m4xKsOhCM_G6g_thg/exec";
+  const url = "https://script.google.com/macros/s/AKfycbxCARV-M60vFo1nzTR6WV5gNVZ17lwa0UuJBeYrNBAsxjIxCBiH24eAB-Wnb9WXqJAo0A/exec";
   const nameSelect = document.getElementById("name");
   const resultDiv = document.getElementById("result");
 
@@ -55,9 +53,9 @@
 
       nameSelect.addEventListener("change", () => {
         const name = nameSelect.value.trim();
-	      if(name!="--選択してください--"){
-		      resultDiv.textContent = name && fixedData[name]? `${name}さんの順路：${fixedData[name]}`: "";
-	      }
+        resultDiv.textContent = name && fixedData[name]
+          ? `${name}さんの順路：${fixedData[name]}`
+          : "";
       });
     })
     .catch(error => {
